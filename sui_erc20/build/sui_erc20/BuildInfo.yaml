@@ -1,0 +1,27 @@
+---
+compiled_package_info:
+  package_name: sui_erc20
+  address_alias_instantiation:
+    std: "0000000000000000000000000000000000000000000000000000000000000001"
+    sui: "0000000000000000000000000000000000000000000000000000000000000002"
+    sui_erc20: "0000000000000000000000000000000000000000000000000000000000000000"
+  source_digest: 7B0AE31092A0282EC201142B3BE674814AAC32E854B742B113823284CA027C24
+  build_flags:
+    dev_mode: false
+    test_mode: false
+    generate_docs: false
+    generate_abis: false
+    install_dir: ~
+    force_recompilation: false
+    lock_file: "./Move.lock"
+    additional_named_addresses: {}
+    fetch_deps_only: false
+    skip_fetch_latest_git_deps: false
+    default_flavor: sui
+    default_edition: ~
+    deps_as_root: false
+    silence_warnings: false
+    warnings_are_errors: false
+dependencies:
+  - MoveStdlib
+  - Sui

@@ -1,0 +1,25 @@
+---
+compiled_package_info:
+  package_name: sui_hello_world
+  address_alias_instantiation:
+    std: "0000000000000000000000000000000000000000000000000000000000000001"
+    sui: "0000000000000000000000000000000000000000000000000000000000000002"
+    sui_hello_world: "0000000000000000000000000000000000000000000000000000000000000000"
+  source_digest: EA9973C3A6332290AE2117BD3E69C5C04DE2E0D216B57DA3EF1CFB0B7082A454
+  build_flags:
+    dev_mode: false
+    test_mode: false
+    generate_docs: false
+    generate_abis: false
+    install_dir: ~
+    force_recompilation: false
+    lock_file: "./Move.lock"
+    additional_named_addresses: {}
+    fetch_deps_only: false
+    skip_fetch_latest_git_deps: false
+    default_flavor: sui
+    default_edition: ~
+    deps_as_root: false
+dependencies:
+  - MoveStdlib
+  - Sui
