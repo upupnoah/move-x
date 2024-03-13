@@ -1,8 +1,8 @@
 [package]
 name = "my_first_package"
-
-# edition = "2024.alpha" # To use the Move 2024 edition, currently in alpha
-# license = ""           # e.g., "MIT", "GPL", "Apache 2.0"
+version = "0.0.1"
+edition = "2024.alpha" # To use the Move 2024 edition, currently in alpha
+license = "MIT"           # e.g., "MIT", "GPL", "Apache 2.0"
 # authors = ["..."]      # e.g., ["Joe Smith (joesmith@noemail.com)", "John Snow (johnsnow@noemail.com)"]
 
 [dependencies]
@@ -20,7 +20,7 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-fram
 # Override = { local = "../conflicting/version", override = true }
 
 [addresses]
-my_first_package = "0x0"
+my_first_package = "0x2d287dd58abdaeb731d8c104639deb102a54a441486c889146e88cfaaef12b5c"
 
 # Named addresses will be accessible in Move as `@name`. They're also exported:
 # for example, `std = "0x1"` is exported by the Standard Library.

@@ -5,13 +5,13 @@ module my_first_package::my_module {
     use sui::transfer;
     use sui::tx_context::{Self, TxContext};
     // Part 2: Struct definitions
-    struct Sword has key, store{
+    public struct Sword has key, store{
         id: UID,
         magic: u64,
         strength: u64,
     }
 
-    struct Forge has key, store {
+    public struct Forge has key, store {
         id: UID,
         swords_created: u64,
     }
@@ -53,7 +53,7 @@ module my_first_package::my_module {
     public fun sword_transfer(sword: Sword, recipient: address, _ctx: &mut TxContext) {
         use sui::transfer;
         // transfer the sword
-        transfer::transfer(sword, recipient);
+        transfer::public_transfer(sword, recipient);
     }
 
     public fun new_sword (
@@ -81,7 +81,7 @@ module my_first_package::my_module {
         use sui::transfer;
 
         // Create a dummy TxContext for testing
-        let ctx = tx_context::dummy();
+        let mut ctx = tx_context::dummy();
 
         // Create a sword
         let sword = Sword {
@@ -108,7 +108,7 @@ module my_first_package::my_module {
         let final_owner = @0xFACE;
 
         // first transaction to emulate module initialization
-        let scenario_val = test_scenario::begin(admin);
+        let mut scenario_val = test_scenario::begin(admin);
         let scenario = &mut scenario_val;
         {
             init(test_scenario::ctx(scenario));
@@ -147,7 +147,7 @@ module my_first_package::my_module {
 
     #[test]
     public fun test_module_init() {
-        let ts = ts::begin(@0x0);
+        let mut ts = ts::begin(@0x0);
 
         // first transaction to emulate module initialization.
         {
@@ -161,13 +161,13 @@ module my_first_package::my_module {
             ts::next_tx(&mut ts, ADMIN);
 
             // extract the Forge object
-            let forge: Forge = ts::take_from_sender(&mut ts);
+            let forge: Forge = ts::take_from_sender(&ts);
 
             // verify number of created swords
             assert!(swords_created(&forge) == 0, 1);
 
             // return the Forge object to the object pool
-            ts::return_to_sender(&mut ts, forge);
+            ts::return_to_sender(&ts, forge);
         };
         ts::end(ts);
     }
