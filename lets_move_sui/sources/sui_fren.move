@@ -70,8 +70,7 @@ module lets_move_sui::sui_fren {
         });
         object::delete(id);
     }
-
-        // Add the new functions here
+    
     public fun get_attributes(sui_fren: &SuiFren): vector<String> {
         sui_fren.attributes
     }
