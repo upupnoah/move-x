@@ -1,4 +1,4 @@
-#[allow(unused_field, unused_variable)]
+#[allow(unused_field, unused_variable, unused_use)]
 module lets_move_sui::dynamic_field {
     use sui::dynamic_field;
     use sui::object::{Self,UID};
@@ -30,7 +30,7 @@ module lets_move_sui::dynamic_field {
             image_url};
         // dynamic_field::add(&mut laptop.id, sticker_name, sticker);
         dynamic_field::add(&mut laptop.id,sticker_name, sticker);
-        let _ = string::utf8(b"added sticker");
+        // let _ = string::utf8(b"added sticker");
     }
 
     public fun read_image_url(laptop: &Laptop, name: String): String {

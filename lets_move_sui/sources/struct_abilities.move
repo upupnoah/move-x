@@ -2,7 +2,7 @@
 // 1. if a structure has the ability to key, then it cannot have the ability to copy
 // 2. It's very important to remember that a struct can only have an ability if ALL of its fields have the same ability
 
-#[allow(unused_field, unused_assignment)]
+#[allow(unused_field, unused_assignment, unused_variable)]
 module lets_move_sui::struct_abilities {
 
     use sui::object::{UID};
