@@ -1,8 +1,8 @@
 #[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use)]
 module lets_move_sui::object_id_and_address {
-    use sui::object::{Self,UID, ID};
+    // use sui::object::{Self,UID, ID};
     use sui::address;
-    use sui::tx_context::{Self, TxContext};
+    // use sui::tx_context::{Self, TxContext};
     use sui::bcs;
     public struct MyObject has key, store {
         id: UID,

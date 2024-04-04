@@ -5,8 +5,6 @@
 #[allow(unused_field, unused_assignment, unused_variable)]
 module lets_move_sui::struct_abilities {
 
-    use sui::object::{UID};
-
     // key:  can be used as a unique identifier for records or objects
     // with the ability of a key, this structure is an object
     public struct AdminCap has key {

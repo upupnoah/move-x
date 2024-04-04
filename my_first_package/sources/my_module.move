@@ -1,3 +1,4 @@
+#[allow(duplicate_alias)]
 module my_first_package::my_module {
 
     // Part 1: Imports

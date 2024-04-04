@@ -1,4 +1,4 @@
-#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use)]
+#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use, duplicate_alias)]
 module lets_move_sui::object_data_structure {
     use sui::object::{Self, UID};
     use sui::object_bag::{Self, ObjectBag};

@@ -1,10 +1,10 @@
 #[allow(unused_field, unused_variable, unused_use)]
 module lets_move_sui::dynamic_field {
     use sui::dynamic_field;
-    use sui::object::{Self,UID};
+    // use sui::object::{Self,UID};
     use std::string::{Self,String};
-    use sui::tx_context::TxContext;
-    use sui::transfer;
+    // use sui::tx_context::TxContext;
+    // use sui::transfer;
     use sui::dynamic_object_field;
 
     public struct Laptop has key {

@@ -1,7 +1,7 @@
 // Note: like rust, its based on module, not file
 //       you can have multiple modules in a file
 
-#[allow(unused_field, lint(self_transfer))]
+#[allow(unused_field, lint(self_transfer), duplicate_alias)]
 module lets_move_sui::sui_fren_v2 {
     use sui::object::{Self, ID, UID};
     use sui::tx_context::{TxContext};
@@ -13,7 +13,7 @@ module lets_move_sui::sui_fren_v2 {
     use std::string::{String, utf8};
 
     // friends
-    friend lets_move_sui::fren_summer;
+    // friend lets_move_sui::fren_summer;
 
     // Store ability allows a struct to be part of other structs. 
     public struct SuiFren has key, store {
@@ -27,7 +27,7 @@ module lets_move_sui::sui_fren_v2 {
         id: ID,
     }
 
-    public(friend) fun mint(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
+    public(package) fun mint(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
         let uid = object::new(ctx);
         let id = object::uid_to_inner(&uid);
         let sui_fren = SuiFren {
@@ -44,7 +44,7 @@ module lets_move_sui::sui_fren_v2 {
         sui_fren
     }
 
-    public(friend) fun create(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
+    public(package) fun create(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
         SuiFren {
             id: object::new(ctx),
             generation,
@@ -100,9 +100,9 @@ module lets_move_sui::sui_fren_v2 {
 
 module lets_move_sui::fren_summer {
     use std::string::String;
-    use sui::tx_context::{Self, TxContext};
-    use sui::object::{UID};
-    use sui::transfer;
+    // use sui::tx_context::{Self, TxContext};
+    // use sui::object::{UID};
+    // use sui::transfer;
 
     // use other module
     use lets_move_sui::sui_fren_v2::{Self, SuiFren, Candy};

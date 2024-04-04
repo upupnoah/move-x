@@ -3,8 +3,8 @@
 // 2. tx_context::sender(ctx) -> transaction sender
 // don't use as authentication or proof of user's direct intention to call this function
 module lets_move_sui::txcontext_object {
-    use sui::object::{Self,UID};
-    use sui::tx_context::{Self, TxContext};
+    // use sui::object::{Self,UID};
+    // use sui::tx_context::{Self, TxContext};
 
     public struct MyObject has key {
         id: UID,
@@ -25,8 +25,8 @@ module lets_move_sui::txcontext_object {
 #[allow(unused_variable, unused_mut_parameter)]
 module lets_move_sui::safe_module {
     const ENOT_AUTHORIZED:u64 = 0;
-    friend lets_move_sui::malicious_module;
-    public(friend) fun claim_rewards(amount: u64, receiver: address, ctx: &mut TxContext) {
+    // friend lets_move_sui::malicious_module;
+    public(package) fun claim_rewards(amount: u64, receiver: address, ctx: &mut TxContext) {
         let sender = tx_context::sender(ctx);
         assert!(sender == @0x12345, ENOT_AUTHORIZED);
         // Send the amount of rewards to the receiver address

@@ -1,7 +1,7 @@
 module lets_move_sui::sui_fren {
-    use sui::tx_context::{Self, TxContext};
-    use sui::transfer;
-    use sui::object::{Self, ID, UID};
+    // use sui::tx_context::{Self, TxContext};
+    // use sui::transfer;
+    // use sui::object::{Self};
     use std::string::String;
     // use std::vector; // built-in
     use sui::event;

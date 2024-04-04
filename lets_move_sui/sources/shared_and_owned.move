@@ -1,7 +1,7 @@
 module lets_move_sui::shared_and_owned {
-    use sui::object::{Self, UID};
-    use sui::tx_context::{Self, TxContext};
-    use sui::transfer;
+    // use sui::object::{Self, UID};
+    // use sui::tx_context::{Self};
+    // use sui::transfer;
     public struct SharedObject has key {
         id: UID,
     }

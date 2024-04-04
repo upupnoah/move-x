@@ -1,5 +1,7 @@
 // PTB: programing transaction block
 // On Sui Network, PTB allows you to define a set of transactions as a single unit of work. (atomic)
+
+#[allow(duplicate_alias)]
 module lets_move_sui::ticket_module_v2 {
     use sui::clock::{Self, Clock};
     use sui::object::{Self, UID};

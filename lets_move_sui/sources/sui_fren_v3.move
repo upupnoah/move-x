@@ -1,4 +1,4 @@
-#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use)]
+#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use, duplicate_alias)]
 module lets_move_sui::sui_fren_v3 {
     use sui::dynamic_field::{Self};
     use sui::dynamic_object_field::{Self};
@@ -23,7 +23,7 @@ module lets_move_sui::sui_fren_v3 {
         id: ID,
     }
 
-    public(friend) fun mint(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
+    public(package) fun mint(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
         let uid = object::new(ctx);
         let id = object::uid_to_inner(&uid);
         let sui_fren = SuiFren {
@@ -40,7 +40,7 @@ module lets_move_sui::sui_fren_v3 {
         sui_fren
     }
 
-    public(friend) fun create(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
+    public(package) fun create(generation: u64, birthdate: u64, attributes: vector<String>, ctx: &mut TxContext): SuiFren {
         SuiFren {
             id: object::new(ctx),
             generation,
@@ -106,7 +106,7 @@ module lets_move_sui::sui_fren_v3 {
         id: UID,
         power: u64,
     }
-    public(friend) fun create_random(ctx: &mut TxContext): SuiFrenV1 {
+    public(package) fun create_random(ctx: &mut TxContext): SuiFrenV1 {
         let object_id = object::new(ctx);
         let bytes = object::uid_to_bytes(&object_id);
         let power = bcs::peel_u64(&mut bcs::new(bytes));
@@ -117,7 +117,7 @@ module lets_move_sui::sui_fren_v3 {
     }
 }
 
-#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use)]
+#[allow(unused_field, lint(self_transfer), unused_variable, unused_const, unused_use, duplicate_alias)]
 module lets_move_sui::fren_summer_v3 {
     use sui::object::{Self, UID};
     use lets_move_sui::sui_fren_v3::{Self, SuiFren, Hat};

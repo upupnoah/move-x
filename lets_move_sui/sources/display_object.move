@@ -1,8 +1,8 @@
 #[allow(unused_field)]
 module lets_move_sui::display_object {
-    use sui::object::{UID};
+    // use sui::object::{UID};
     use std::string::{String, utf8};
-    use sui::tx_context::TxContext;
+    // use sui::tx_context::TxContext;
     use sui::package::Publisher;
     use sui::display;
 

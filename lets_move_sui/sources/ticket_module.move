@@ -1,8 +1,8 @@
 module lets_move_sui::ticket_module {
     use sui::clock::{Self, Clock};
-    use sui::object::{Self, ID, UID};
-    use sui::transfer;
-    use sui::tx_context::{Self, TxContext};
+    // use sui::object::{Self, ID, UID};
+    // use sui::transfer;
+    // use sui::tx_context::{Self, TxContext};
     use sui::event;
 
     public struct Ticket has key{

@@ -1,7 +1,7 @@
 module lets_move_sui::color {
-    use sui::transfer;
-    use sui::object::{Self, UID};
-    use sui::tx_context::TxContext;
+    // use sui::transfer;
+    // use sui::object::{Self, UID};
+    // use sui::tx_context::TxContext;
     public struct ColorObject has key {
         id: UID,
         red: u8,

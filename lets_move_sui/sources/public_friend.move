@@ -13,9 +13,9 @@ module lets_move_sui::my_other_module {
 // To allow other modules to use the public (friend) defined by oneself, 
 // you need to declare the module name using the friend keyword.
 module lets_move_sui::my_module {
-    friend lets_move_sui::my_other_module;
+    // friend lets_move_sui::my_other_module;
 
-    public(friend) fun friend_only_equal(x: u64): bool {
+    public(package) fun friend_only_equal(x: u64): bool {
         x == 1000
     }
 }

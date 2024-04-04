@@ -1,9 +1,9 @@
 #[allow(unused_variable, unused_function, unused_mut_parameter, unused_field, unused_assignment, unused_use)]
 module lets_move_sui::noah {
-    use sui::object::{Self, UID};
-    use sui::tx_context::{Self, TxContext};
-    use sui::transfer;
-    use std::vector;
+    // use sui::object::{Self, UID};
+    // use sui::tx_context::{Self, TxContext};
+    // use sui::transfer;
+    // use std::vector;
     use std::string::{String, utf8};
 
     public struct Noah has key {

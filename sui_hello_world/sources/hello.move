@@ -1,3 +1,4 @@
+#[allow(duplicate_alias)]
 module sui_hello_world::hello_world {
     use std::string;
     use sui::object::{Self, UID};
@@ -5,7 +6,7 @@ module sui_hello_world::hello_world {
     use sui::tx_context::{Self, TxContext};
 
     // An object that contains an arbitrary string
-    struct HelloWorldObject has key, store {
+    public struct HelloWorldObject has key, store {
         id: UID,
         /// A string contained in the object
         text: string::String

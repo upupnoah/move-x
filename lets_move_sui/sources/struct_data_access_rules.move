@@ -3,7 +3,7 @@
 
 #[allow(unused_use)]
 module lets_move_sui::a {
-    use sui::object::{Self, UID};
+    // use sui::object::{Self, UID};
     public struct MyData has key {
         id: UID,
         value: u64,
